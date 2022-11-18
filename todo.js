@@ -41,7 +41,7 @@ const todoList = () => {
       // ..
       // ..
       // return OUTPUT_STRING
-      let outres = list
+      let source = list
       .map(
         (item) =>
           `${item.completed ? "[x] " : "[ ] "}${item.title} ${
@@ -49,7 +49,7 @@ const todoList = () => {
           }`
       )
       .join("\n");
-    return outres;
+    return source;
     }
   
     return { all, add, markAsComplete, overdue, dueToday, dueLater, toDisplayableList };

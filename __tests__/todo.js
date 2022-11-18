@@ -2,21 +2,21 @@
 const todoList = require("../todo");
 const { all, add, markAsComplete, overdue, dueToday, dueLater } = todoList();
 
-describe("Remainder testing the todo list", () => {
+describe("testing-the-todo-list-remainder", () => {
   // Before starting all tests
   beforeAll(() => {
     add({
-      title: "Todotest-1",
+      title: "test-todo-a",
       dueDate: new Date().toLocaleDateString("en-CA"),
       completed: false,
     });
   });
 
   //add function
-  test("adding-new todo to todo_list", () => {
+  test("adding-new-task-to-todo-list", () => {
     const t_len = all.length;
     add({
-      title: "Testtodo-2",
+      title: "test-todo-b",
       dueDate: new Date().toLocaleDateString("en-CA"),
       completed: false,
     });
@@ -24,15 +24,15 @@ describe("Remainder testing the todo list", () => {
   });
 
   //markAsComplete function
-  test("markcomplete the todo list-1", () => {
+  test("mark-complete-the-todo-list", () => {
     markAsComplete(0);
     expect(all[0].completed).toBe(true);
   });
 
   //overdue function
-  test("Over-due todos if true ", () => {
+  test("Over-due-the-todo-when-true", () => {
     add({
-      title: "Test-overdue if true",
+      title: "test-the-overdue-when-true",
       dueDate: new Date(
         new Date().setDate(new Date().getDate() - 1)
       ).toLocaleDateString("en-CA"),
@@ -42,15 +42,15 @@ describe("Remainder testing the todo list", () => {
   });
 
   //dueToday function
-  test("Due-today todos if true", () => {
+  test("due-todo-today-when-true", () => {
     
     expect(dueToday().length).toBe(2);
   });
 
   //dueLater function
-  test("Due-later todos id true", () => {
+  test("due-later-todo-when-true", () => {
     add({
-      title: "Test due later if true",
+      title: "testing-due-later-when-true",
       dueDate: new Date(
         new Date().setDate(new Date().getDate() + 1)
       ).toLocaleDateString("en-CA"),
